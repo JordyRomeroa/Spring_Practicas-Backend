@@ -38,7 +38,5 @@ public class LoginRequestDto {
     public void setPassword(String password) {
         this.password = password;
     }
-
-   
-
+    
 }

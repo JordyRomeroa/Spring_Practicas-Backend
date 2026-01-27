@@ -34,10 +34,9 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // 1. Inicializar roles
+
         initializeRoles();
 
-        // 2. Crear usuario admin por defecto
         createDefaultAdminUser();
     }
 
@@ -66,7 +65,6 @@ public class DataInitializer implements CommandLineRunner {
             admin.setEmail(adminEmail);
             admin.setPassword(passwordEncoder.encode("admin123"));
 
-            // Asignar rol ADMIN
             RoleEntity adminRole = roleRepository.findByName(RoleName.ROLE_ADMIN)
                     .orElseThrow(() -> new RuntimeException("Rol ADMIN no encontrado"));
 

@@ -10,10 +10,7 @@ import ec.edu.ups.icc.fundamentos01.security.models.RoleName;
 
 @Repository
 public interface RoleRepository extends JpaRepository<RoleEntity, Long> {
-
-    // Buscar rol por nombre (ROLE_USER, ROLE_ADMIN, etc.)
     Optional<RoleEntity> findByName(RoleName name);
     
-    // Verificar si existe un rol específico
     boolean existsByName(RoleName name);
 }
